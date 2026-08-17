@@ -909,3 +909,63 @@ body.light-theme .topbar {
         font-size: 9px;
     }
 }
+/* MOBILE KEYBOARD / MESSAGE BAR FIX */
+
+@media (max-width: 700px) {
+
+    body {
+        min-height: 100dvh;
+    }
+
+    .app {
+        height: 100dvh;
+        min-height: 100dvh;
+    }
+
+    .main {
+        height: 100dvh;
+        min-height: 100dvh;
+    }
+
+    .chat-area {
+        padding-bottom: 180px;
+    }
+
+    .input-area {
+        position: fixed;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        padding-left: 6px;
+        padding-right: 6px;
+
+        padding-bottom:
+            calc(
+                12px +
+                env(
+                    safe-area-inset-bottom,
+                    0px
+                )
+            );
+
+        background:
+            linear-gradient(
+                to top,
+                var(--bg) 72%,
+                transparent
+            );
+
+        z-index: 50;
+    }
+
+    .input-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #message {
+        min-width: 0;
+    }
+}
